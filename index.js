@@ -1,5 +1,12 @@
 const {Builder, By, Key, util} = require("selenium-webdriver");
 
+const firefox = require("selenium-webdriver/firefox");
+const options = new firefox.Options();
+options.setPreference("browser.download.dir", "C:\\mySeleniumDownloads");
+options.setPreference("browser.download.folderList", 2);
+options.setPreference("browser.helperApps.neverAsk.saveToDisk", "applications/x-csv");
+
+
 // async function example() {
 //     let driver = await new Builder().forBrowser("chrome").build();
 //     await driver.get("http://google.pl");
@@ -8,6 +15,6 @@ const {Builder, By, Key, util} = require("selenium-webdriver");
 
 // example();
 
-const driver = new Builder().forBrowser("chrome").build();
+const driver = new Builder().forBrowser("firefox").setFirefoxOptions(options).build();
 
-driver.get("https://tsjs.pl");
+driver.get("http://insight.dev.schoolwires.com/HelpAssets/C2Assets/C2Files/C2ImportCalEventSample.csv");
