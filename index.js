@@ -1,14 +1,15 @@
-const {Builder, By, Key, util} = require("selenium-webdriver");
+const { Builder, By, Key, util } = require("selenium-webdriver");
 
 const firefox = require("selenium-webdriver/firefox");
-const options = new firefox.Options();
+const proxy = require("selenium-webdriver/proxy");
 
+const options = new firefox.Options();
 options.setProfile("./SeleniumTutorial");
+const proxyServer = "182.253.93.2:53281";
 
 // options.setPreference("browser.download.dir", "C:\\mySeleniumDownloads");
 // options.setPreference("browser.download.folderList", 2);
 // options.setPreference("browser.helperApps.neverAsk.saveToDisk", "applications/x-csv");
-
 
 // async function example() {
 //     let driver = await new Builder().forBrowser("chrome").build();
@@ -18,6 +19,13 @@ options.setProfile("./SeleniumTutorial");
 
 // example();
 
-const driver = new Builder().forBrowser("firefox").setFirefoxOptions(options).build();
+const driver = new Builder()
+  .forBrowser("firefox")
+  .setFirefoxOptions(options)
+  .setProxy(proxy.manual({
+      http: proxyServer,
+      https: proxyServer
+  }))
+  .build();
 
-driver.get("http://google.com");
+driver.get("http://google.com/");
