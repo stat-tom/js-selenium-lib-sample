@@ -1,16 +1,18 @@
-const { Builder } = require("selenium-webdriver");
+const { Builder, By } = require("selenium-webdriver");
 
 const driver = new Builder()
   .forBrowser("firefox")
   .build();
 
-async function openWebsites() {
+async function checkRegistration() {
     try {
-        await (await driver).get("https://www.google.pl/");
-        await (await driver).get("https://www.google.com/");   
+        await driver.get("https://rori4.github.io/selenium-practice/#/pages/practice/simple-registration");
+        await driver.findElement(By.name("email")).sendKeys("way2go@gmail.com");   
+        await driver.findElement(By.id("password")).sendKeys("12345");   
+        await driver.findElement(By.name("submit")).click();   
     } catch (error) {
         console.log(error);
     }
 }
 
-openWebsites();
+checkRegistration();
