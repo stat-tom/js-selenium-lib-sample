@@ -1,4 +1,4 @@
-const { Builder, By } = require("./node_modules/selenium-webdriver");
+const { Builder, By } = require("selenium-webdriver");
 
 const driver = new Builder()
   .forBrowser("firefox")
