@@ -7,7 +7,7 @@ const driver = new Builder()
 async function registrationForm() {
     try {
         await driver.get("https://rori4.github.io/selenium-practice/#/pages/practice/simple-registration");
-        await driver.findElement(By.name("email")).sendKeys("secretmail@gmail.com");   
+        await driver.findElement(By.name("email")).sendKeys("gimli@gmail.com");   
         await driver.findElement(By.id("password")).sendKeys("12345");   
         await driver.findElement(By.name("submit")).click();   
     } catch (error) {
