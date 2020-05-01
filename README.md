@@ -11,3 +11,9 @@ You can grab the code and automate tests for a bunch of commonly used web forms:
 06. File Upload form
 07. iFrame form
 08. Table extraction
+
+Technologies used and concepts covered:
+
+* ES6
+* Node.js (NPM)
+* Selenium Webdriver
