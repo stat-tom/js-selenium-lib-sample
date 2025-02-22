@@ -1,4 +1,4 @@
-# web-test-suite
+# js-selenium-lib-sample
 An automation testing suite with the use of Firefox, Selenium Webdriver and JavaScript.
 
 You can grab the code and automate tests for a bunch of commonly used web forms:
